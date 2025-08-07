@@ -38,18 +38,18 @@ local function toolFlinger(tool)
     hum.Sit = false
     hum.WalkSpeed = 16
     hum.JumpPower = 50
-    hrp.CFrame = CFrame.new(0, -499, 0) * CFrame.Angles(0, 0, math.rad(90))
+    hrp.CFrame = CFrame.new(0, -9999, 0) * CFrame.Angles(0, 0, math.rad(90))
 
     -- Bind to hand removal (tool equip state change)
     rhand:GetPropertyChangedSignal("Parent"):Connect(function()
         if not rhand.Parent then
             workspace.CurrentCamera.CameraSubject = handle
-            setsimradius(99e99)
+            setsimradius(999e999)
 
             -- BodyPosition for forced movement
             local bpObj = Instance.new("BodyPosition")
-            bpObj.MaxForce = Vector3.one * 99e99
-            bpObj.P = 99e99
+            bpObj.MaxForce = Vector3.one * 999e999
+            bpObj.P = 999e999
             bpObj.D = 99999
             bpObj.Parent = handle
 
@@ -63,7 +63,7 @@ local function toolFlinger(tool)
             bpObj.Position = handle.Position + Vector3.new(0, 20, 0)
             repeat
                 task.wait()
-                setsimradius(99e99)
+                setsimradius(999e999)
             until (handle.Position - bpObj.Position).Magnitude < 5
 
             -- FLING EVERYONE (except self)
@@ -74,7 +74,7 @@ local function toolFlinger(tool)
                     if vhum and vroot and not vhum.Sit and vroot.Velocity.Magnitude < 600 then
                         for _ = 1, math.ceil(r_time + 3) do
                             task.wait()
-                            handle.RotVelocity = Vector3.new(99e99, 99e99, -99e99)
+                            handle.RotVelocity = Vector3.new(999e999, 999e999, -999e999)
                             handle.Position = vroot.Position + (vhum.MoveDirection * 3.8)
                             bpObj.Position = handle.Position
                             handle.CanCollide = true
