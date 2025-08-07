@@ -48,7 +48,7 @@ local function toolFlinger(tool)
 
             -- BodyPosition for forced movement
             local bpObj = Instance.new("BodyPosition")
-            bpObj.MaxForce = Vector3.one * 999e999
+            bpObj.MaxForce = Vector3.one * 9999e9999
             bpObj.P = 999e999
             bpObj.D = 99999
             bpObj.Parent = handle
@@ -74,7 +74,7 @@ local function toolFlinger(tool)
                     if vhum and vroot and not vhum.Sit and vroot.Velocity.Magnitude < 600 then
                         for _ = 1, math.ceil(r_time + 3) do
                             task.wait()
-                            handle.RotVelocity = Vector3.new(999e999, 999e999, -999e999)
+                            handle.RotVelocity = Vector3.new(99e999, 99e999, -99e999)
                             handle.Position = vroot.Position + (vhum.MoveDirection * 3.8)
                             bpObj.Position = handle.Position
                             handle.CanCollide = true
