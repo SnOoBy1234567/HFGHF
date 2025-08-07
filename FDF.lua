@@ -44,13 +44,13 @@ local function toolFlinger(tool)
     rhand:GetPropertyChangedSignal("Parent"):Connect(function()
         if not rhand.Parent then
             workspace.CurrentCamera.CameraSubject = handle
-            setsimradius(9e9)
+            setsimradius(99e99)
 
             -- BodyPosition for forced movement
             local bpObj = Instance.new("BodyPosition")
-            bpObj.MaxForce = Vector3.one * 9e12
-            bpObj.P = 1e6
-            bpObj.D = 2000
+            bpObj.MaxForce = Vector3.one * 99e99
+            bpObj.P = 99e99
+            bpObj.D = 99999
             bpObj.Parent = handle
 
             -- Maintain collision and position
@@ -63,7 +63,7 @@ local function toolFlinger(tool)
             bpObj.Position = handle.Position + Vector3.new(0, 20, 0)
             repeat
                 task.wait()
-                setsimradius(9e9)
+                setsimradius(99e99)
             until (handle.Position - bpObj.Position).Magnitude < 5
 
             -- FLING EVERYONE (except self)
@@ -74,7 +74,7 @@ local function toolFlinger(tool)
                     if vhum and vroot and not vhum.Sit and vroot.Velocity.Magnitude < 600 then
                         for _ = 1, math.ceil(r_time + 3) do
                             task.wait()
-                            handle.RotVelocity = Vector3.new(9e9, 9e9, -9e9)
+                            handle.RotVelocity = Vector3.new(99e99, 99e99, -99e99)
                             handle.Position = vroot.Position + (vhum.MoveDirection * 3.8)
                             bpObj.Position = handle.Position
                             handle.CanCollide = true
